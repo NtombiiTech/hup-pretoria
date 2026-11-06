@@ -1,0 +1,29 @@
+@font-face{font-family:'Studio Brush';src:url('studio-brush.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(work-sans-0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(work-sans-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(work-sans-2.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(work-sans-3.ttf) format('truetype');
+}
