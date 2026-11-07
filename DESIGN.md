@@ -1,50 +1,46 @@
-# HUP — Philly House reference redesign
+# HUP — Philly House reference implementation
 
-Reference: https://www.phillyhouse.org/ . Source inspected 6 November 2026: public HTML, Squarespace site CSS, custom CSS, homepage section markup and get-help page. Three mobile screenshots supplied by the user were visually inspected. Firecrawl refused capture because credits were exhausted; an additional desktop screenshot and live animation states could not be captured. Desktop column structure is supported by source markup rather than an observed desktop screenshot. Exact pixel fidelity is therefore not claimed.
+Reference: https://www.phillyhouse.org/ . Inspected and captured in Chromium on 7 November 2026. Nine complete mobile page screenshots: Home, About, Get Help Now, What We Do, Ways to Give, Get Involved, Stories + News, Contact, and Approach to Homelessness. Desktop homepage also captured. Measurement files and captures: `/workspace/work/hup-reference-study-20261107/`.
 
-## Extracted reference design
+## Observed design system
 
-- Header: navy `#002864` / dark navy `#0c2760`, centred logo and two navigation groups on desktop; logo left and three-line accent menu on mobile. Main source CSS uses Work Sans 18px / 1.8 body copy.
-- Headings, navigation and buttons: Studio Brush regular, uppercase. Heading font is explicitly declared by reference custom CSS at https://static1.squarespace.com/static/custom-css/62ab6e8a7082fb7765785e76/62ab6e8a7082fb7765785e90/1/custom.css . Body Work Sans also appears in the site's main CSS.
-- Reference primary buttons: gold `#f1a83b`, dark navy type, 10px radius, approximately 20px 35px padding; .home-hero-button source. White/transparent secondary treatments.
-- Hero: monochrome portrait, centred brush lettering, outlined hand-drawn word circle, two side-by-side action buttons; supplied mobile screenshot establishes this arrangement.
-- Section sequence: hero; white organisation intro; current campaign split; dark story-card area with torn top; full-width photo gallery; white need / approach section; dark involvement section; image-backed connection section with rounded white card; closing refuge / donation appeal; logo / contact footer.
-- Stories: three columns in desktop markup; stacked cards in supplied mobile screenshot. Square portraits, white text panel, 12–24px rounded treatment, small initial shadow increasing on hover (custom CSS specifies shadow transition .3s).
-- Motion evidence: source declares 480ms opacity loading and a 2s headline fade; card hover shadow and image transitions appear in CSS. Parallax configuration is present, but live movement was not observed. HUP uses modest opacity/translate entry and image/hover transitions, with reduced-motion support.
+| Component | Reference mobile measurement | HUP implementation |
+| --- | --- | --- |
+| Header | Approximately 63px, logo left, menu right | 64px, HUP wordmark only |
+| Content gutters | 20px at 390px viewport | 20px |
+| Hero heading | Studio Brush 54px, tightly led | 54px, 46px below 350px |
+| Section heading | Studio Brush 28px / 33.6px | Same |
+| Introduction heading | 54px / 43.2px | Same |
+| Body | Work Sans 18px / 32.4px | Same |
+| Hero buttons | Studio Brush 18px, gold, 10px corners | Same scale, HUP green accent |
+| Story cards | Square photo, white body, 18px inset, 8px corners | Same; explicit illustrative labels retained |
+| Story body | Approximately 13px / 21px | Same |
+| Involvement cards | Saturated colour, white icon, stacked, 24px corners | Three HUP green shades |
+| Statistics | 200px painted circles | Verified client meal schedule and registration year |
 
-## HUP mapping
+The homepage retains the photographic overlay hero, hand-drawn heading circle, white fade and paper tear. Its section sequence follows the reference: introduction and photograph, support appeal, stories, full-width gallery, need/facts, involvement, connection, closing appeal. HUP's service and partner sections remain in that sequence.
 
-| Role | HUP value |
-| --- | --- |
-| Header / primary green | `#205235` |
-| Dark story sections | `#123c29` |
-| Footer | `#0c2c1d` |
-| Existing brand green | `#39772f` |
-| Existing accent green | `#84bd00` |
-| Light green emphasis | `#c6e49c` |
-| White / pale sections | `#ffffff` / `#f1f4ed` |
-| Headings | Studio Brush regular |
-| Body | Work Sans 400–700, locally hosted |
+Dedicated page treatments follow their corresponding reference: full-height photo About; painted heading block for Get Help; left-aligned full-height What We Do; white Ways to Give introduction with coloured panels; dark short Stories + News heading; Contact opens directly with a green form section. No reference programme claims, dates, faith statements, clients or impact counts have been presented as HUP facts.
 
-The reference's navy/gold roles are mapped to HUP's existing green-and-white palette. The original HUP house symbol and name are retained. Header, buttons, cards, spacing and forms are restyled across all eight pages.
+## HUP palette and identity
 
-Home adds HUP's actual four service areas and public-sector partners to the reference sequence. The network membership stays a compact logo row. The connection card links to the functioning contact page rather than displaying an unconfigured newsletter signup. The need section describes shelter/support rather than reusing Philly House's statistics. Profiles are identified as 2022 reporting, with no invented testimonials or outcomes. No Philly House client photographs, logo, geographic illustration, programme claims, founding date or faith statements are used as HUP content.
+Header `#205235`; dark sections `#123c29`; footer `#0c2c1d`; green `#39772f`; accent `#84bd00`; light emphasis `#c6e49c`; pale `#f1f4ed`; white. The HUP wordmark is white, with the pink tapered underline from the supplied sign. No house icon or header subtitle.
 
-## Local assets
+Studio Brush and Work Sans are hosted locally. Decorative masks copied from the public reference assets are used for shapes only and coloured with HUP CSS:
 
-- Hero / founder card: assets/founder.webp — Buang Mfumane, Ron Sibiya / Rekord, October 2022.
-- Campaign / gallery: assets/food.webp, meal.webp, volunteers.webp, outreach.webp — HUP outreach, July 2022.
-- Story cards: assets/zanele.webp and counselling.webp — published HUP social-worker profiles, 2022.
-- Partners: assets/partners/; original provenance in PARTNER-ASSETS.md.
-- Studio Brush reference file: https://static1.squarespace.com/static/62ab6e8a7082fb7765785e76/t/62b0ec663621fe3b10e1d4ce/1655762022665/studio-brush-regular.woff2 . Loaded locally as assets/studio-brush.woff2.
-- Work Sans: Google Fonts CSS https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap . Local files declared in assets/philly-fonts.css.
+- `assets/textures/paper-tear.png`: https://images.squarespace-cdn.com/content/v1/62ab6e8a7082fb7765785e76/8a54a6e6-6031-4023-a609-44bf2a3d1fb0/blue-tear.png?format=1500w
+- `assets/textures/paint-circle.png`: https://static1.squarespace.com/static/62ab6e8a7082fb7765785e76/t/62e308dad618dc2ef79c461c/1659046106380/blue-circle1.png
+- `assets/textures/paint-stroke.png`: https://static1.squarespace.com/static/62ab6e8a7082fb7765785e76/t/62b7317c6bc8b546ca0484d2/1656172924777/gold-brush.png
+- `assets/textures/hand-circle.png`: https://static1.squarespace.com/static/62ab6e8a7082fb7765785e76/t/62bf47f25cffd857c138eb6e/1656702962515/gold-circle.png
 
-## Responsive decisions and validation limits
+## Content and photographs
 
-Desktop navigation switches to mobile at 960px. Story cards become one column at 640px; full-width photographs stack. Primary hero actions remain side by side, matching the supplied screenshot. Cards, forms and partner grids have explicit small-screen layouts, with 320px overrides. Font glyph metrics were checked for narrow hero headings and buttons; this is not a browser layout test.
+No new photograph generation or AI enhancement was performed in this update. The previously supplied handover and shared-meal versions remain. Their existing provenance and temporary stock/fictional content are recorded in TEMPORARY-CONTENT.md. Fictional Daniel, Joseph and Michael stories are clearly labelled, including in their dialogs. Accurate HUP organisation information is recorded in OFFICIAL-INFO.md; partner provenance in PARTNER-ASSETS.md. No address on the homepage or footer; contact and shelter directions retain it.
 
-Public-site screenshots and local browser QA remain unavailable for this version because Firecrawl credits are exhausted and the Sites-managed browser tool is absent. Source/interaction checks cover all eight pages and the existing donation / enquiry flows. Real form delivery remains pending activation of HUP's Formspree endpoint as documented in CONTENT-HANDOVER.md.
+The painted circles describe three scheduled meals **for HUP clients** and nonprofit registration on 7 February 2018. Registration year is not described as the founding year. The site does not invent capacity, accommodation fees, banking details or successful client outcomes.
 
-## Supplied HUP identity and operational information
+## Verification
 
-On-site photographs supplied after this redesign replace the proposed house symbol with a white HUP / pink underline typographic website mark. Slogan, registration, street address, team names and client meal timetable are now integrated without changing the Philly House layout. See OFFICIAL-INFO.md for exact transcription, provenance and limitations.
+Chromium rendered all eight HUP pages at 320, 390, 768 and 1440px (32 page/viewport combinations). No document horizontal overflow, missing images or duplicate/missing H1s. Mobile navigation, Escape dismissal and story dialogs verified in Chromium. Local links/assets/anchors, gallery, consent, donation choices and enquiry handling also passed the existing checks. CSS respects reduced motion.
+
+Browser fixtures served exact local files through Playwright routing; post-publication requests separately check the public deployment. Contact remains honest email-draft mode until HUP supplies an active delivery endpoint. Mock delivery tests cover failures, validation and duplicate prevention without sending real messages.
